@@ -1,0 +1,6 @@
+Here's what's going on:
+
+Cheerio is grabbing a static copy of the html as it looks on the initial load from 'http://people.com/tag/news/'.  At the point of initial page load, no content is loaded in the 'div.inner-container' elements.  Since Cheerio can only fetch static html content, the Cheerio library won't work for this task.  
+
+
+However, there is a hack workaround.  I examined the HTML and realized that the image URLs are "data-src" attributes on the 'div.lazy-image' elements. These can be harvested with Cheerio.
